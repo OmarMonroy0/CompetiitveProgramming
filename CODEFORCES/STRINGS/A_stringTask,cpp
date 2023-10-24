@@ -1,0 +1,25 @@
+//A. String Task
+// Codeforces Beta Round  #89 (Div..2)
+//https://codeforces.com/contest/118/problem/A
+
+#include<iostream>
+#include<string>
+#define FOR(i,n) for(int i = 0; i < (int)n; i++)
+using namespace std;
+int main(){
+    string s,t="";
+    int a,b,c,tam;
+    cin>>s;
+    tam = s.length();
+    FOR(i,tam){
+        if(s[i] >= 65 && s[i] <= 90)
+            s[i] += 32;
+        if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'y');
+        else {
+            t+= ".";
+            t+= s[i];
+        }
+    }
+    cout<<t;
+    return 0;
+}

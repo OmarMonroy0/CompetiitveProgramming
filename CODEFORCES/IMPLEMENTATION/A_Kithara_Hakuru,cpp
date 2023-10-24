@@ -1,0 +1,64 @@
+//A. Kithara  Haruki's Gift
+//  https://codeforces.com/contest/433/problem/A
+
+#include <bits/stdc++.h>
+#define endl "\n"
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+unordered_map<ll,ll> m;
+typedef pair<int, int> PAR;
+typedef struct elementos{
+    int fi,se;
+    bool re;
+}elementos;
+vector<elementos> v1;
+elementos find(int f1,int f2){
+    int l = v1.size();
+    elementos e;
+    e.fi = -1;
+    e.se = -1;
+    e.re = false;
+    for(int i = 0; i < l; i ++){
+        if(v1[i].fi == f1 && v1[i].se == f2 ){
+            e.fi = f1;
+            e.se = f2;
+            e.re = v1[i].re;
+            return e;
+        }
+    }
+    return e;
+    
+}
+bool rec(vector<ll> v,int m, int i,int f1,int f2){
+    elementos x = find(f1,f2);
+    if( x.fi != -1) return x.re;
+    if(i >= m){
+        if(f1 == f2 ) return true;
+        return false;
+    }
+    int aux = v[i];
+    int  l = rec(v,m, i+1,f1+aux,f2); 
+    int n = rec(v,m,i+1,f1,f2+aux);
+    elementos k;
+    k.fi = f1;
+    k.se = f2;
+    if( l == true || n == true ){
+        k.re = true;
+        v1.push_back(k);
+        return true;
+    }
+    k.re = false;
+    v1.push_back(k);
+    return false;
+}
+int main (){
+    ll  t, i,j;
+    cin>>t;
+    vector<ll> v (t);
+    for(i = 0; i < t; i ++)
+        cin>>v[i];
+    cout<<( (rec(v,t,0,0,0)) == true ? "YES" : "NO"); 
+    return 0;
+}
+ 

@@ -1,0 +1,46 @@
+//https://codeforces.com/gym/101908/problem/E
+//E. Enigma 
+//2018-2019 ACM-ICP Brazil Subregional  Programming Contest
+
+#include <bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(false);  cin.tie(nullptr); cout.tie(nullptr);
+#define FOR(i,n) for(unsigned long long i = 0; i < (unsigned long long)n; i ++)
+#define FOR0(i,n) for(long int i = 0; i < (long int)n; i++)
+#define fi first
+#define se second
+#define endl "\n"
+#define endls "\n\n\n"
+using namespace std;
+typedef unsigned long long ull;
+typedef long long ll;
+typedef vector<ll> vec;
+typedef vector<ull> vecu;
+typedef pair<int,int> PAR;
+typedef pair<long int,long int> PARI;
+typedef pair <float, float> PARF;
+ll size0,size1;
+bool compare(string s,string s1,ll i,ll j){
+    ll k = 0;
+    for(; i <= j ; i++){
+        if(s1[k++] == s[i]) return false;
+    }
+    return true;
+}
+ll solve(ll i, ll j , string s, string s1){
+   if( j >= size0) return 0;
+   if(compare(s,s1,i,j) == true){
+        return 1 + solve(i+1,j+1,s,s1);       
+   } 
+   else{
+       return solve(i+1,j+1,s,s1);
+   }
+}
+ 
+int main() { fast;
+    string s, s1, i,j,k,l;
+    cin>>s>>s1;
+    size0 = s.length();
+    size1 = s1.length();
+    cout<<solve(0,size1-1,s,s1);
+	return 0;
+}
