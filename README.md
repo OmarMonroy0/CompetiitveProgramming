@@ -12,5 +12,5 @@ El repositorio incluira lo siguiente
 - Soluciones de problemas para algunas competencias.
 
 
-![GatitoAnimado](https://isaaclo97.github.io/curso/Tips/img/codea.gif)
+![GatitoAnimado](https://isaaclo97.github.io/curso/Tips/img/codea.gif) 
 
