@@ -14,5 +14,6 @@ El repositorio incluira lo siguiente
 
 ![GatitoAnimado](https://isaaclo97.github.io/curso/Tips/img/codea.gif) 
 
-
-![ProgramacionCompetitiva](https://media.tenor.com/29Ok5pc0ivAAAAAM/gatinho-gato.gif)
+<p align="center">
+  <img src="https://media.tenor.com/29Ok5pc0ivAAAAAM/gatinho-gato.gif"alt="GatitoAnimado">
+</p>
